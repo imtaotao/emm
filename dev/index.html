@@ -7,8 +7,14 @@
 </head>
 <body>
   <script type="module">
-    import x from '../src/index.js';
+    import { Emm } from '../src/index.js';
 
+    const parser = new Emm(`
+      let const a = 1; 
+    `, './a.js')
+
+    const ast = parser.parse();
+    console.log(ast);
   </script>
 </body>
 </html>
